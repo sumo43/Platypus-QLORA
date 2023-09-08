@@ -4,11 +4,11 @@ python3 finetune.py \
     --base_model tiiuae/falcon-180B \
     --data-path garage-bAInd/Open-Platypus \
     --output_dir ./falcon-platypus-13b \
-    --batch_size 1 \
-    --micro_batch_size 1 \
+    --batch_size 8 \
+    --micro_batch_size 8 \
     --num_epochs 1 \
     --learning_rate 0.0003 \
-    --cutoff_len 3072 \
+    --cutoff_len 2048 \
     --val_set_size 0 \
     --lora_r 16 \
     --lora_alpha 16 \
@@ -23,4 +23,5 @@ python3 finetune.py \
     --wandb_run_name falcon-platypus-180b \
     --wandb_watch false \
     --wandb_log_model true \
+    --resume_from_checkpoint /home/ubuntu/Platypus-QLORA/falcon-platypus-13b/checkpoint-8000 \
     --warmup_steps 100
